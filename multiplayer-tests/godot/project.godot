@@ -99,16 +99,59 @@ _global_script_class_icons={
 [application]
 
 config/name="Nakama Test"
-run/main_scene="res://src/Demo.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+Online="*res://autoload/Online.gd"
+OnlineMatch="*res://addons/nakama-webrtc/OnlineMatch.gd"
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
+GameManager="*res://GameManager.gd"
+
+[debug]
+
+multirun/number_of_windows=2
+multirun/window_distance=1270
+multirun/add_custom_args=true
+multirun/first_window_args="listen"
+multirun/other_window_args="join"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/multirun/plugin.cfg" )
+
+[gdnative]
+
+singletons=[ "res://webrtc/webrtc.gdnlib", "res://webrtc_debug/webrtc_debug.gdnlib" ]
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [physics]
 
